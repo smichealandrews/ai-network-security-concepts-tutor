@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="An interactive beginner-friendly tutor for AI and network security concepts." />
+  <title>NetWise AI | Network Security Tutor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark">N<span>+</span></div><div><strong>NetWise AI</strong><small>SECURITY LEARNING LAB</small></div></div>
+      <button class="nav-item active" data-view="learn"><span>▦</span> Learn concepts</button>
+      <button class="nav-item" data-view="tutor"><span>✦</span> Ask the tutor</button>
+      <button class="nav-item" data-view="quiz"><span>✓</span> Knowledge quiz</button>
+      <div class="sidebar-note"><div class="shield">◇</div><strong>Learn safely.</strong><p>Explore security concepts using examples designed for education and defense.</p></div>
+      <div class="sidebar-footer"><span class="status-dot"></span> Offline demo · No API key needed</div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar"><div><span class="eyebrow">YOUR PERSONAL STUDY SPACE</span><h1 id="page-title">AI & Network Security</h1></div><button id="theme-toggle" class="icon-button" aria-label="Toggle theme">☾</button></header>
+
+      <section id="view-learn" class="view active">
+        <div class="hero">
+          <div class="hero-copy"><span class="pill">BEGINNER FRIENDLY</span><h2>Understand security.<br><em>Build confidence.</em></h2><p>Learn essential network security and AI concepts through clear explanations, real-world examples, and quick practice.</p><button class="primary-button" id="start-learning">Start learning <span>→</span></button></div>
+          <div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="core">✦<small>AI</small></div><div class="node node-a">⌁</div><div class="node node-b">◇</div><div class="node node-c">✓</div><div class="node node-d">↗</div></div>
+        </div>
+        <div class="section-heading"><div><span class="eyebrow">LEARNING PATH</span><h2>Explore concepts</h2></div><span id="concept-count" class="muted">8 topics</span></div>
+        <div class="search-wrap"><span>⌕</span><input id="concept-search" type="search" placeholder="Search concepts, e.g. firewall, phishing..." aria-label="Search concepts" /></div>
+        <div id="concept-grid" class="concept-grid"></div>
+        <div class="progress-card"><div class="progress-icon">↗</div><div class="progress-copy"><strong>Your learning progress</strong><p id="progress-text">You have explored 0 of 8 concepts.</p><div class="progress-track"><div id="progress-bar"></div></div></div><span id="progress-percent">0%</span></div>
+      </section>
+
+      <section id="view-tutor" class="view">
+        <div class="section-heading"><div><span class="eyebrow">STUDY ASSISTANT</span><h2>Ask the tutor</h2><p class="muted">Ask a question about a security topic. This demo uses a built-in knowledge base.</p></div></div>
+        <div class="chat-panel"><div class="chat-header"><div class="avatar">✦</div><div><strong>NetWise Tutor</strong><small><span class="status-dot"></span> Ready to help</small></div><span class="safe-tag">DEFENSIVE LEARNING</span></div><div id="chat-messages" class="chat-messages"><div class="message assistant"><span class="message-avatar">N</span><div><p>Hi! I'm your network security study tutor. Ask me about firewalls, encryption, phishing, intrusion detection, AI in security, or another topic from the learning path.</p><small>NetWise Tutor</small></div></div></div><div class="suggestions"><button class="suggestion">What is a firewall?</button><button class="suggestion">Explain phishing</button><button class="suggestion">How does AI help security?</button></div><form id="chat-form" class="chat-input"><input id="chat-question" autocomplete="off" placeholder="Ask a security concept..." aria-label="Ask a question" /><button class="send-button" aria-label="Send question">↑</button></form><p class="chat-disclaimer">Educational demo only. Avoid entering passwords or private information.</p></div>
+      </section>
+
+      <section id="view-quiz" class="view">
+        <div class="section-heading"><div><span class="eyebrow">CHECK YOUR UNDERSTANDING</span><h2>Knowledge quiz</h2><p class="muted">Answer a few questions and review your score.</p></div></div>
+        <div class="quiz-card"><div class="quiz-top"><span id="quiz-step" class="pill">QUESTION 1 OF 5</span><span id="quiz-score-label" class="muted">Score: 0</span></div><div class="quiz-track"><div id="quiz-progress"></div></div><h3 id="quiz-question"></h3><div id="quiz-options" class="quiz-options"></div><div id="quiz-feedback" class="quiz-feedback" aria-live="polite"></div><div class="quiz-actions"><button id="quiz-restart" class="secondary-button">Restart quiz</button><button id="quiz-next" class="primary-button" disabled>Next question →</button></div></div>
+      </section>
+
+      <footer>NetWise AI <span>·</span> A student project for responsible cybersecurity education</footer>
+    </main>
+  </div>
+  <div id="concept-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-backdrop"></div><article class="modal-card"><button id="modal-close" class="modal-close" aria-label="Close">×</button><span id="modal-icon" class="modal-icon">◇</span><span id="modal-category" class="eyebrow"></span><h2 id="modal-title"></h2><p id="modal-summary"></p><div class="example-box"><strong>Real-world example</strong><p id="modal-example"></p></div><div class="tip-box"><strong>Remember</strong><p id="modal-tip"></p></div><button id="mark-learned" class="primary-button">Mark as learned ✓</button></article></div>
+  <script src="app.js"></script>
+</body>
+</html>
